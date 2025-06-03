@@ -29,7 +29,6 @@ const Footer = () => {
   const quickLinks = [
     { name: 'About Me', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Blog Posts', href: '#blog' },
     { name: 'Resume', href: '/resume.pdf', download: true }
   ];
 

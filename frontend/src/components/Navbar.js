@@ -17,7 +17,6 @@ const Navbar = () => {
   const navItems = [
     { name: 'About Me', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Blog Posts', href: '#blog' },
   ];
 
   const socialLinks = [
