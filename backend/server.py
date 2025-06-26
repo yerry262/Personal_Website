@@ -9,7 +9,11 @@ from pydantic import BaseModel, Field
 from typing import List
 import uuid
 from datetime import datetime
+from fastapi.staticfiles import StaticFiles
 
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    return FileResponse(ROOT_DIR / "../frontend/build/index.html")
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -21,6 +25,7 @@ db = client[os.environ['DB_NAME']]
 
 # Create the main app without a prefix
 app = FastAPI()
+app.mount("/", StaticFiles(directory=ROOT_DIR / "../frontend/build", html=True), name="static")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")

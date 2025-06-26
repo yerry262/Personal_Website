@@ -29,6 +29,18 @@ const About = () => {
       ]
     },
     {
+      title: "Solo Staker",
+      company: "Ethereum Blockchain",
+      location: "Austin, TX",
+      period: "12/1/2020 - Current",
+      highlights: [
+        "Running a self-hosted Ethereum validator using Geth and Prysm since the Beacon Chain launch in December 2020",
+        "Operate as a solo staker and trusted validator for friends and family, managing multiple keys with secure infrastructure",
+        "Maintain 24/7 uptime and performance monitoring using custom scripts and alerts to ensure validator health and inclusion rewards",
+        "Contribute to Ethereum network decentralization with a personalized graffiti tag 'Yerry' on proposed blocks"
+      ]
+    },
+    {
       title: "Undergraduate Research Assistant",
       company: "Marquette University",
       location: "Milwaukee, WI",
@@ -42,9 +54,10 @@ const About = () => {
   ];
 
   const skills = [
-    { name: "Python & Pandas", level: 95, icon: Code },
+    { name: "Python", level: 95, icon: Code },
     { name: "System Testing", level: 98, icon: Zap },
     { name: "PLC Programming", level: 90, icon: Users },
+    { name: "UI Development", level: 92, icon: Users },
     { name: "Process Optimization", level: 85, icon: Award },
     { name: "Cross-functional Leadership", level: 92, icon: Users },
     { name: "Data Analysis", level: 88, icon: Code }
@@ -75,8 +88,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            A passionate mechanical engineer with expertise in system-level testing, 
-            automation, and creative problem-solving at the intersection of hardware and software.
+          I'm a mechanical engineer who specializes in software development with a focus on automation, embedded systems, and creative problem-solving at the intersection of hardware, software, and real-world impact.
           </p>
         </motion.div>
 

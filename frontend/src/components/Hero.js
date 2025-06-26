@@ -63,7 +63,7 @@ const Hero = () => {
               Senior Product Development Engineer
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4 text-lg md:text-xl text-blue-400">
-              <span className="font-mono">System-Level Testing Expert</span>
+              <span className="font-mono">System-Level Testing Engineer</span>
               <span className="hidden md:block">•</span>
               <span className="font-mono">AMD • Austin, TX</span>
             </div>
@@ -98,7 +98,7 @@ const Hero = () => {
               <ArrowRight size={20} />
             </motion.button>
             
-            <motion.a
+            {/* <motion.a
               href="/resume.pdf"
               download
               whileHover={{ scale: 1.05 }}
@@ -107,7 +107,7 @@ const Hero = () => {
             >
               <Download size={20} />
               <span>Download Resume</span>
-            </motion.a>
+            </motion.a> */}
           </motion.div>
 
           {/* Tech Stack Pills */}
@@ -117,7 +117,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="flex flex-wrap items-center justify-center space-x-4 space-y-2"
           >
-            {['Python', 'Pandas', 'System Testing', 'PLC Programming', 'Automation'].map((tech, index) => (
+            {['Python', 'Java', 'IOS', 'System Testing', 'PLC Programming', 'Automation'].map((tech, index) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}
