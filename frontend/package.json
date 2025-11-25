@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yerry262.github.io/Personal_Website",
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "axios": "^1.8.4",
