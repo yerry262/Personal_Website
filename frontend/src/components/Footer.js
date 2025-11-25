@@ -199,9 +199,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-slate-500 text-sm flex items-center"
             >
-              © {currentYear} Jerry Steele. Built with
-              <Heart size={14} className="mx-1 text-red-400" />
-              and cutting-edge technology.
+              Built by Jerry Steele. © {currentYear}
             </motion.p>
             
             <motion.div
