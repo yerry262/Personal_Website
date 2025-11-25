@@ -49,6 +49,21 @@ const Projects = () => {
 
   const personalProjects = [
     {
+      title: "Home Run Derby - Early 2000s Edition",
+      description: "Retro-styled browser-based baseball batting game inspired by classic early 2000s arcade games with timing-based gameplay and particle effects.",
+      technologies: ["HTML5 Canvas", "Vanilla JavaScript", "CSS3", "Local Storage"],
+      highlights: [
+        "One-strike timing-based gameplay with variable pitch speeds",
+        "Early 2000s aesthetic with golden gradients and particle effects",
+        "High score leaderboard with persistent localStorage",
+        "Responsive design supporting mouse, keyboard, and touch controls"
+      ],
+      icon: Globe,
+      category: "Web Game Development",
+      github: "https://github.com/yerry262/HomeRunDerby",
+      demo: "https://yerry262.github.io/HomeRunDerby/"
+    },
+    {
       title: "LED Matrix Spotify Visualizer",
       description: "Interactive LED display that syncs with Spotify's API to show real-time album artwork and music visualization.",
       technologies: ["ESP32", "Spotify API", "LED Matrix", "Embedded Systems"],
@@ -90,6 +105,20 @@ const Projects = () => {
       icon: Wifi,
       category: "Wireless Communication",
       github: "https://github.com/yerry262"
+    },
+    {
+      title: "USB UEFI Firmware Interface",
+      description: "Comprehensive UEFI firmware debugging interface designed for AMD AM5/Ryzen 7000 and 9000 series processors with USB-bootable low-level system access.",
+      technologies: ["C", "UEFI/EDK2", "Assembly", "Make", "Firmware Development"],
+      highlights: [
+        "Interactive command interface for firmware debugging and inspection",
+        "USB device detection and enumeration with xHCI/EHCI support",
+        "Flash memory operations and firmware validation tools",
+        "AMD-specific optimizations for Ryzen 7000/9000 series processors"
+      ],
+      icon: Cpu,
+      category: "Firmware & Low-Level Systems",
+      github: "https://github.com/yerry262/usb-uefi-firmware"
     },
     {
       title: "iOS Security Research Tool",
