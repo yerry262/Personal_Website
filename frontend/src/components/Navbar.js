@@ -55,7 +55,7 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <a href="#home" className="text-2xl font-bold gradient-text">
-              Jerry Steele
+              Portfolio
             </a>
           </motion.div>
 
