@@ -267,15 +267,17 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${project.title} GitHub repository`}
                       className="p-2 text-slate-400 hover:text-blue-400 transition-colors"
                     >
                       <Github size={20} />
                     </a>
-                    {project.demo && (
+                    {project.demo && project.demo !== '#' && (
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`${project.title} live demo`}
                         className="p-2 text-slate-400 hover:text-blue-400 transition-colors"
                       >
                         <ExternalLink size={20} />

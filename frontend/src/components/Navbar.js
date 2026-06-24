@@ -76,6 +76,7 @@ const Navbar = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={social.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
@@ -92,6 +93,8 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
               className="text-slate-300 hover:text-blue-400 transition-colors duration-200"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -132,6 +135,7 @@ const Navbar = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={social.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
