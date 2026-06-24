@@ -123,7 +123,6 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    download={link.download}
                     className="text-slate-400 hover:text-blue-400 transition-colors duration-200 flex items-center group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200">
