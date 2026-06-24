@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,8 +28,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Me', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Resume', href: '/resume.pdf', download: true }
+    { name: 'Projects', href: '#projects' }
   ];
 
   const technologies = [
@@ -91,6 +90,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.label}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
@@ -209,8 +209,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex space-x-6 text-sm text-slate-500"
             >
-              <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
+              <a href="#home" className="hover:text-blue-400 transition-colors">Back to top</a>
             </motion.div>
           </div>
         </div>
