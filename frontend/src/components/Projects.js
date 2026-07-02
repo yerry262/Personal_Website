@@ -244,7 +244,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass rounded-2xl p-8 hover-lift group"
+              whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+              className="glass rounded-2xl p-8 group"
             >
               {/* Project Header */}
               <div className="flex items-start justify-between mb-6">

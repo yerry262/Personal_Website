@@ -163,7 +163,8 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="glass rounded-2xl p-8 hover-lift relative"
+                whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+                className="glass rounded-2xl p-8 relative"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                   <div>
@@ -210,7 +211,8 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass rounded-xl p-6 hover-lift"
+                whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+                className="glass rounded-xl p-6"
               >
                 <div className="flex items-center mb-4">
                   <skill.icon className="text-blue-400 mr-3" size={24} />

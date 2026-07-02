@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const particles = useMemo(
+    () =>
+      [...Array(20)].map(() => ({
+        left: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 20}s`,
+        animationDuration: `${15 + Math.random() * 10}s`
+      })),
+    []
+  );
+
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -21,16 +31,8 @@ const Hero = () => {
 
       {/* Floating Particles */}
       <div className="particles">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 20}s`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }}
-          />
+        {particles.map((style, i) => (
+          <div key={i} className="particle" style={style} />
         ))}
       </div>
 
@@ -92,7 +94,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToAbout}
-              className="btn-primary px-8 py-4 rounded-xl font-semibold text-lg flex items-center space-x-2 hover-lift"
+              className="btn-primary px-8 py-4 rounded-xl font-semibold text-lg flex items-center space-x-2"
             >
               <span>Explore My Work</span>
               <ArrowRight size={20} />
