@@ -69,7 +69,8 @@ const About = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1581094016871-d948d70c26cd"
-          alt="Professional Engineering Workspace"
+          alt=""
+          loading="lazy"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900/95 to-dark-800/90"></div>

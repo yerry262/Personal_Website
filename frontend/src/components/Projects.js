@@ -173,7 +173,8 @@ const Projects = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.pexels.com/photos/16053029/pexels-photo-16053029.jpeg"
-          alt="Advanced Technology"
+          alt=""
+          loading="lazy"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900/95 to-dark-800/90"></div>

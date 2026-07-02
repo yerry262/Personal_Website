@@ -100,17 +100,7 @@ const Hero = () => {
               <span>Explore My Work</span>
               <ArrowRight size={20} />
             </motion.button>
-            
-            {/* <motion.a
-              href="/resume.pdf"
-              download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-secondary px-8 py-4 rounded-xl font-semibold text-lg flex items-center space-x-2 hover-lift"
-            >
-              <Download size={20} />
-              <span>Download Resume</span>
-            </motion.a> */}
+
           </motion.div>
 
           {/* Tech Stack Pills */}
