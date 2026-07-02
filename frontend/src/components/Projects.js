@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Code, Zap, Cpu, Wifi, Smartphone, Globe } from 'lucide-react';
+import { fadeUp, cardHover } from '../motionPresets';
 
-const Projects = () => {
-  const [activeTab, setActiveTab] = useState('professional');
-
-  const professionalProjects = [
+const professionalProjects = [
     {
       title: "AMD Instinct MI300 AI Solution Testing",
       description: "Led comprehensive system-level testing for AMD's flagship AI solution, ensuring compliance with rigorous performance and reliability standards.",
@@ -45,9 +43,9 @@ const Projects = () => {
       icon: Code,
       category: "Industrial Automation"
     }
-  ];
+];
 
-  const personalProjects = [
+const personalProjects = [
     {
       title: "Home Run Derby - Early 2000s Edition",
       description: "Retro-styled browser-based baseball batting game inspired by classic early 2000s arcade games with timing-based gameplay and particle effects.",
@@ -163,8 +161,10 @@ const Projects = () => {
       category: "Blockchain Technology",
       github: "https://github.com/yerry262"
     }
-  ];
+];
 
+const Projects = () => {
+  const [activeTab, setActiveTab] = useState('professional');
   const projects = activeTab === 'professional' ? professionalProjects : personalProjects;
 
   return (
@@ -182,13 +182,7 @@ const Projects = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <motion.div {...fadeUp()} className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
             Projects
           </h2>
@@ -199,16 +193,11 @@ const Projects = () => {
         </motion.div>
 
         {/* Tab Navigation */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
+        <motion.div {...fadeUp(0.2, 0.6, 30)} className="flex justify-center mb-12">
           <div className="glass rounded-xl p-2 inline-flex">
             <button
               onClick={() => setActiveTab('professional')}
+              aria-pressed={activeTab === 'professional'}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'professional'
                   ? 'bg-blue-600 text-white shadow-lg'
@@ -219,6 +208,7 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setActiveTab('personal')}
+              aria-pressed={activeTab === 'personal'}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'personal'
                   ? 'bg-blue-600 text-white shadow-lg'
@@ -231,21 +221,12 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        >
+        <motion.div {...fadeUp(0.4, 0.8, 0)} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+              {...fadeUp(index * 0.1, 0.6)}
+              whileHover={cardHover}
               className="glass rounded-2xl p-8 group"
             >
               {/* Project Header */}

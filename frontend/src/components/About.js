@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Award, Users, Code, Zap } from 'lucide-react';
+import { fadeUp, fadeLeft, popIn, cardHover } from '../motionPresets';
 
-const About = () => {
-  const experiences = [
+const experiences = [
     {
       title: "Senior Product Development Engineer",
       company: "Advanced Micro Devices (AMD)",
@@ -51,18 +51,19 @@ const About = () => {
         "Created custom control interfaces and meaningful user displays"
       ]
     }
-  ];
+];
 
-  const skills = [
+const skills = [
     { name: "Python", level: 95, icon: Code },
     { name: "System Testing", level: 98, icon: Zap },
     { name: "PLC Programming", level: 90, icon: Users },
     { name: "UI Development", level: 92, icon: Users },
     { name: "Process Optimization", level: 85, icon: Award },
     { name: "Cross-functional Leadership", level: 92, icon: Users },
-    { name: "Data Analysis", level: 88, icon: Code }
-  ];
+  { name: "Data Analysis", level: 88, icon: Code }
+];
 
+const About = () => {
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Background */}
@@ -78,13 +79,7 @@ const About = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <motion.div {...fadeUp()} className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
             About Me
           </h2>
@@ -94,13 +89,7 @@ const About = () => {
         </motion.div>
 
         {/* Personal Info & Education */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20"
-        >
+        <motion.div {...fadeUp(0.2)} className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Personal Info */}
           <div className="glass rounded-2xl p-8 hover-lift">
             <h3 className="text-2xl font-bold text-blue-400 mb-6 flex items-center">
@@ -147,24 +136,15 @@ const About = () => {
         </motion.div>
 
         {/* Experience Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
+        <motion.div {...fadeUp(0.4)} className="mb-20">
           <h3 className="text-3xl font-bold text-center gradient-text mb-12">Professional Experience</h3>
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+                {...fadeLeft(index * 0.2)}
+                whileHover={cardHover}
                 className="glass rounded-2xl p-8 relative"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
@@ -196,23 +176,15 @@ const About = () => {
         </motion.div>
 
         {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <motion.div {...fadeUp(0.6)}>
           <h3 className="text-3xl font-bold text-center gradient-text mb-12">Core Competencies</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.2)' }}
+                {...popIn(index * 0.1)}
+                whileHover={cardHover}
                 className="glass rounded-xl p-6"
               >
                 <div className="flex items-center mb-4">

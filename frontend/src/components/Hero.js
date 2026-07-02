@@ -24,7 +24,8 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1604011237320-8e0506614fdf"
-          alt="Futuristic Technology Background"
+          alt=""
+          fetchpriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900/90 via-dark-800/80 to-blue-900/60"></div>

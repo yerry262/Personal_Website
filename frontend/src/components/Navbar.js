@@ -2,6 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
+const navItems = [
+  { name: 'About Me', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+];
+
+const socialLinks = [
+  {
+    icon: Github,
+    href: 'https://github.com/yerry262',
+    label: 'GitHub'
+  },
+  {
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/jerry-steele-08a2b012b/',
+    label: 'LinkedIn'
+  },
+  {
+    icon: Mail,
+    href: 'mailto:jerry21steele@gmail.com',
+    label: 'Email'
+  },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -14,29 +37,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { name: 'About Me', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-  ];
-
-  const socialLinks = [
-    { 
-      icon: Github, 
-      href: 'https://github.com/yerry262', 
-      label: 'GitHub' 
-    },
-    { 
-      icon: Linkedin, 
-      href: 'https://www.linkedin.com/in/jerry-steele-08a2b012b/', 
-      label: 'LinkedIn' 
-    },
-    { 
-      icon: Mail, 
-      href: 'mailto:jerry21steele@gmail.com', 
-      label: 'Email' 
-    },
-  ];
 
   return (
     <motion.nav

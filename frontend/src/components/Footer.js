@@ -1,11 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { fadeUp } from '../motionPresets';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
+const socialLinks = [
     {
       icon: Github,
       href: 'https://github.com/yerry262',
@@ -26,19 +24,22 @@ const Footer = () => {
     }
   ];
 
-  const quickLinks = [
-    { name: 'About Me', href: '#about' },
-    { name: 'Projects', href: '#projects' }
-  ];
+const quickLinks = [
+  { name: 'About Me', href: '#about' },
+  { name: 'Projects', href: '#projects' }
+];
 
-  const technologies = [
+const technologies = [
     'Python & Pandas',
     'System Testing',
     'PLC Programming',
     'Industrial Automation',
     'Embedded Systems',
-    'Blockchain Technology'
-  ];
+  'Blockchain Technology'
+];
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative bg-dark-900 border-t border-slate-800">
@@ -52,10 +53,7 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            {...fadeUp(0, 0.6, 30)}
             className="lg:col-span-2"
           >
             <h3 className="text-2xl font-bold gradient-text mb-4">Jerry Steele</h3>
@@ -106,10 +104,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
+            {...fadeUp(0.1, 0.6, 30)}
           >
             <h4 className="text-lg font-semibold text-blue-400 mb-6">Quick Links</h4>
             <ul className="space-y-3">
@@ -136,10 +131,7 @@ const Footer = () => {
 
           {/* Technologies */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            {...fadeUp(0.2, 0.6, 30)}
           >
             <h4 className="text-lg font-semibold text-blue-400 mb-6">Technologies</h4>
             <div className="space-y-2">
@@ -161,13 +153,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="py-8 border-t border-slate-800"
-        >
+        <motion.div {...fadeUp(0.3, 0.6, 30)} className="py-8 border-t border-slate-800">
           <div className="text-center">
             <h4 className="text-xl font-semibold gradient-text mb-4">
               Stay Connected

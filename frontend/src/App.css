@@ -12,11 +12,6 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Enhanced scroll behavior */
-html {
-  scroll-padding-top: 80px;
-}
-
 /* Print styles */
 @media print {
   .glass,
