@@ -7,7 +7,8 @@ const Hero = () => {
     () =>
       [...Array(20)].map(() => ({
         left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 20}s`,
+        // negative delay starts each particle mid-flight instead of queued at the bottom
+        animationDelay: `-${Math.random() * 20}s`,
         animationDuration: `${15 + Math.random() * 10}s`
       })),
     []
@@ -117,7 +118,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex flex-wrap items-center justify-center space-x-4 space-y-2"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
           >
             {['Python', 'Java', 'IOS', 'System Testing', 'PLC Programming', 'Automation'].map((tech, index) => (
               <motion.span

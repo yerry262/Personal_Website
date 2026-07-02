@@ -94,6 +94,8 @@ code {
   height: 2px;
   background: #3b82f6;
   border-radius: 50%;
+  /* invisible until its animation starts, so delayed particles don't park at top:0 */
+  opacity: 0;
   animation: particle-float 20s infinite linear;
 }
 

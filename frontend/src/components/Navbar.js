@@ -111,7 +111,7 @@ const Navbar = () => {
           opacity: isOpen ? 1 : 0, 
           height: isOpen ? 'auto' : 0 
         }}
-        className="md:hidden glass-dark"
+        className="md:hidden glass-dark overflow-hidden"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item, index) => (
