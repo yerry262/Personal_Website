@@ -1,19 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import ParticleField from './ParticleField';
 
 const Hero = () => {
-  const particles = useMemo(
-    () =>
-      [...Array(20)].map(() => ({
-        left: `${Math.random() * 100}%`,
-        // negative delay starts each particle mid-flight instead of queued at the bottom
-        animationDelay: `-${Math.random() * 20}s`,
-        animationDuration: `${15 + Math.random() * 10}s`
-      })),
-    []
-  );
-
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -31,12 +21,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900/90 via-dark-800/80 to-blue-900/60"></div>
       </div>
 
-      {/* Floating Particles */}
-      <div className="particles">
-        {particles.map((style, i) => (
-          <div key={i} className="particle" style={style} />
-        ))}
-      </div>
+      {/* Interactive particle network */}
+      <ParticleField />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
